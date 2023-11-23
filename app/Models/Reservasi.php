@@ -10,7 +10,7 @@ class Reservasi extends Model
     use HasFactory;
 
     protected $table = 'reservasis';
-    protected $fillable = ['id', 'notelp', 'email', 'nama', 'jumlahkamar', 'guest_id', 'gambarktp', 'filebukti'];
+    protected $fillable = ['id', 'notelp', 'email', 'nama', 'jumlahkamar', 'guest_id', 'gambarktp'];
 
     public function guest(): BelongsTo {
         return $this->belongsTo(Guest::class, 'guest_id'); }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Guest;
 use App\Models\Reservasi;
 use Illuminate\Http\Request;
+use App\Exports\ReservasiExport;
+use Illuminate\Routing\Controller;
 
 class ReservasiController extends Controller
 {
@@ -42,32 +44,13 @@ class ReservasiController extends Controller
 
         }
 
-        $namaFile = "";
-
-        if ($request->hasFile("filebukti") && $request->file("filebukti")->isValid()) {
-
-            $filename = $request->file("filebukti")->getClientOriginalName();
-
-            $filenameArr = explode(".", $filename);
-
-            $ekstensi = strtolower(end($filenameArr));
-
-            $namaFile = $request->nama . "." . $ekstensi;
-
-            $request->file("filebukti")->move("assets/bukti/", $namaFile);
-
-        }
-
-
-
         Reservasi::create([
-            'nama'  => $request->nama,
+                'nama'  => $request->nama,
                 'notelp'  => $request->notelp,
                 'email' => $request->email,
                 'jumlahkamar' => $request->jumlahkamar,
                 'guest_id' => $request->guest_id,
                 'gambarktp' => $namaGambar,
-                'filebukti' => $namaFile,
         ]);
 
         return redirect()->route('datahotel.crud.create')->with('success','Reservasi Berhasil ditambahkan');
@@ -86,9 +69,11 @@ class ReservasiController extends Controller
             'email' => 'required|string',
             'jumlahkamar' => 'required|integer',
             'guest_id' => 'required',
-            'gambarktp' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'filebukti' => 'required|mimes:pdf,excel|max:2048',
+
         ]);
+
+
+
         $reservasi = Reservasi::findOrFail($id);
         $reservasi->update([
         'nama' => $request->nama,
@@ -107,6 +92,28 @@ class ReservasiController extends Controller
         session(['deleted_id' => $id]);
         return redirect()->route('datahotel.reservasi')->with('success1','Reservasi ID $id Berhasil dihapus');
     }
+
+    public function downloadExcel()
+        {
+            $reservasi = Reservasi::all();
+            // Generate Excel content
+            $content = "ID Reservasi\tNo Telp\tEmail\tNama\tJumlah Kamar\tGuestID\tGambar\n";
+
+        foreach ($reservasi as $res) {
+            $content .= "{$res->id}\t{$res->notelp}\t{$res->email}\t{$res->nama}\t{$res->jumlahkamar}\t{$res->guest_id}\t{$res->gambarktp}\n";
+        }
+
+        // Set headers for download
+        header("Content-type: application/vnd.ms-excel");
+        header("Content-Disposition: attachment; filename=reservasi.xls");
+        header("Pragma: no-cache");
+        header("Expires: 0");
+
+        // Output content to the browser
+        echo $content;
+        exit;
+    }
+
 
 
 }

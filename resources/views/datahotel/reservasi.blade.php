@@ -19,13 +19,17 @@
 
             <div class="text-center flex flex-col items-center">
                 <h1 class="text-3xl font-bold mt-8">DATA RESERVASI</h1>
-                <a href="{{ route('datahotel.crud.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
-                    <i class="fas fa-plus"></i>
-                    Create
-                </a>
-                 {{-- <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
-                    <i class="fas fa-plus"></i> Create
-                </a> --}}
+                <div class="flex flex-row">
+                    <a href="{{ route('datahotel.crud.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
+                        <i class="fas fa-plus"></i>
+                        CREATE
+                    </a>
+                    <div class="px-4"></div>
+                    <a href="{{ route('datahotel.download') }}" class="bg-green-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mt-4">
+                        <i class="fa-solid fa-download"></i>
+                        DOWNLOAD DATA RESERVASI
+                    </a>
+                </div>
 
             </div>
 
@@ -70,14 +74,17 @@
                                         Nomor Telepon
                                     </th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Jumlah Kamar
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         ID-Guest
                                     </th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                        FOTO KTP
                                     </th>
-                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    {{-- <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Bukti Pembayaran
-                                    </th>
+                                    </th> --}}
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Aksi
                                     </th>
@@ -99,14 +106,17 @@
                                             {{ $res->notelp }}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
+                                            {{ $res->jumlahkamar }}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
                                             {{ $res->guest_id }}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             {{ $res->gambarktp }}
                                         </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
+                                        {{-- <td class="px-6 py-4 whitespace-nowrap">
                                             {{ $res->bukti }}
-                                        </td>
+                                        </td> --}}
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <a href="{{ route('datahotel.crud.edit', $res->id) }}"class="text-indigo-600 hover:text-indigo-900">
                                                 <i class="fas fa-edit text-blue-500"></i>

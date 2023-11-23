@@ -4,6 +4,7 @@ use App\Models\Guest;
 use App\Models\Reservasi;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GuestController;
 use App\Http\Controllers\ImportController;
 use App\Http\Controllers\ReservasiController;
 
@@ -87,6 +88,14 @@ Route::controller(ReservasiController::class)->group(function(){
     Route::get('/data/reservasi/edit/{id}', 'edit')->name('datahotel.crud.edit');
     Route::post('/data/reservasi/edit/{id}/action', 'update')->name('datahotel.update');
     Route::post('/data/reservasi/delete/{id}/action', 'delete')->name('datahotel.delete');
+    Route::get('/data/reservasi/download_excel', 'downloadExcel')->name('datahotel.download');
+});
+
+Route::controller(GuestController::class)->group(function(){
+    Route::get('/data/guest/create', 'create')->name('datahotel.guest.create');
+    Route::post('/data/guest/create/action','store')->name('datahotel.guest.store');
+    Route::post('/data/guest/delete/{id}/action', 'delete')->name('datahotel.guest.delete');
+
 });
 
 

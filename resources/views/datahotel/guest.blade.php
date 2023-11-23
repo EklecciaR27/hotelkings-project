@@ -18,10 +18,22 @@
         @include('components.navbardashboard')
 
 
-            <div class="text-center">
-                <h1 class="text-3xl font-bold mt-12">DATA GUEST</h1>
+        <div class="text-center flex flex-col items-center">
+            <h1 class="text-3xl font-bold mt-8">DATA GUEST</h1>
+            <div class="flex flex-row">
+                <a href="{{ route('datahotel.guest.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
+                    <i class="fas fa-plus"></i>
+                    CREATE
+                </a>
+                <div class="px-4"></div>
+                {{-- <a href="{{ route('datahotel.download') }}" class="bg-green-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded mt-4">
+                    <i class="fa-solid fa-download"></i>
+                    DOWNLOAD
+                </a> --}}
             </div>
-            <div class="py-12">
+
+        </div>
+            <div class="py-12 mx-20">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                         <table class="min-w-full divide-y divide-gray-200">
@@ -35,9 +47,6 @@
                                     </th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Nama
-                                    </th>
-                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Aksi
                                     </th>
                                 </tr>
                             </thead>
@@ -53,15 +62,7 @@
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             {{ $gst->nama }}
                                         </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <a  class="text-indigo-600 hover:text-indigo-900">
-                                                <i class="fas fa-edit text-blue-500"></i>
-                                            </a>
 
-                                            <a class="text-red-600 hover:text-red-900">
-                                                <i class="fas fa-trash text-red-500"></i>
-                                            </a>
-                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

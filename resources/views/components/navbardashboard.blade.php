@@ -14,7 +14,7 @@
     <span class="flex flex-row text-lg font-bold text-black">ADMIN DASHBOARD </span>
     <nav class="flex flex-row p-8 px-4 justify-between items-center sticky top-20 z-10">
         <ul class="hidden lg:flex items-center font-bold gap-28 justify-center text-white ml-80">
-          <li class="hover-bg-slate-800"><a href="#">HOME</a></li>
+          <li class="hover-bg-slate-800"><a href="{{ url('data/home') }}">HOME</a></li>
           <li class="hover-bg-slate-800"><a href="{{ url('data/reservasi') }}">RESERVASI</a></li>
           <li class="hover-bg-slate-800"><a href="{{ url('data/guest') }}"> DATA GUEST</a></li>
           <li class="hover-bg-slate-800"><a href="{{ route('logout') }}" > <i class="fas fa-sign-out-alt"></i></a></li>

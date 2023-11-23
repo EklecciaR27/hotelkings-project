@@ -81,6 +81,10 @@
                         @endforeach
                     </select>
                 </div>
+                {{-- <div class="py-2">
+                    <span class="mb-2 text-md">Gambar KTP (jpg, jpeg, png):</span>
+                    <input type="file" id="gambarktp" name="gambarktp" value="{{$reservasis->gambarktp}}" class="w-full p-2 border border-gray-300 rounded">
+                </div> --}}
                 <div class="py-2">
                     <button type="submit" class="w-full bg-purple-500 text-white p-2 rounded-lg mb-6 hover:bg-white hover:text-black hover:border hover:border-gray-300">
                         EDIT RESERVATION

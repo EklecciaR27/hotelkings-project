@@ -19,7 +19,6 @@ return new class extends Migration
             $table->integer('jumlahkamar');
             $table->foreignId('guest_id')->constrained();
             $table->string('gambarktp');
-            $table->string('filebukti');
             $table->timestamps();
         });
     }
