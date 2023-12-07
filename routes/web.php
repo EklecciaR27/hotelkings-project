@@ -89,6 +89,7 @@ Route::controller(ReservasiController::class)->group(function(){
     Route::post('/data/reservasi/edit/{id}/action', 'update')->name('datahotel.update');
     Route::post('/data/reservasi/delete/{id}/action', 'delete')->name('datahotel.delete');
     Route::get('/data/reservasi/download_excel', 'downloadExcel')->name('datahotel.download');
+    Route::get('/data/reservasi/search', 'search')->name('datahotel.search');
 });
 
 Route::controller(GuestController::class)->group(function(){

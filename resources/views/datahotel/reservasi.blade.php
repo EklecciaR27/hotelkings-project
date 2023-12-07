@@ -29,6 +29,13 @@
                         <i class="fa-solid fa-download"></i>
                         DOWNLOAD DATA RESERVASI
                     </a>
+                    <form action="{{ route('datahotel.search') }}" method="GET" class="flex items-center border border-gray-300 rounded mt-4 ml-4">
+                        <input type="text" name="query" placeholder="Search..." class="py-2 px-3 rounded-l focus:outline-none">
+                        <button type="submit" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
+                            Search
+                        </button>
+                    </form>
+
                 </div>
 
             </div>

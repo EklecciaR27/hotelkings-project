@@ -10,6 +10,21 @@ use Illuminate\Routing\Controller;
 
 class ReservasiController extends Controller
 {
+
+    public function search(Request $request)
+    {
+    $query = $request->input('query');
+
+    $reservasi = Reservasi::where('nama', 'like', '%' . $query . '%')
+        ->orWhere('notelp', 'like', '%' . $query . '%')
+        ->orWhere('email', 'like', '%' . $query . '%')
+        ->orWhere('jumlahkamar', 'like', '%' . $query . '%')
+        ->orWhere('guest_id', 'like', '%' . $query . '%')
+        ->get();
+
+    return view('datahotel.reservasi', compact('reservasi'));
+    }
+
     public function create(){
         return view('datahotel.crud.create', [
         'guest' => Guest::all()
