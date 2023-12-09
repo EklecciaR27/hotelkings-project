@@ -52,7 +52,12 @@ Route::get('/auth/login', function () {
 Route::post('/auth/register/action', [ AuthController::class, 'registerAction' ])->name('auth.register.action');
 
 Route::get('/data/home', function () {
-    return view('datahotel.homeadmin');
+    return view('datahotel.homeadmin',
+    [
+        "reservasi" => Reservasi::all(),
+        "guest" => Guest::all(),
+    ]
+);
 })->name('datahotel.homeadmin')->middleware('auth');
 
 
