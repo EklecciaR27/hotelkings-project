@@ -1,8 +1,5 @@
 @extends('layouts.global')
-{{-- @section('js')
-    <script src="{{ $chart->cdn() }}"></script>
-    {{ $chart->script() }}
-@endsection --}}
+
 @include('components.navbardashboard')
 
 
@@ -31,10 +28,15 @@
             </div>
         </div>
     </div>
-{{--
-    <div style="display: flex; justify-content: space-around;">
+
+
+
+    {{-- <div style="display: flex; justify-content: space-around;">
         {!! $chart->container() !!}
-    </div> --}}
+    </div>
+    <script src="{{ $chart->cdn() }}"></script>
+
+{{ $chart->script() }} --}}
 </section>
 
 

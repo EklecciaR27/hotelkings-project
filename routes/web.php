@@ -105,8 +105,15 @@ Route::controller(GuestController::class)->group(function(){
 });
 
 Route::controller(ChartController::class)->group(function(){
-    Route::get('/data/chart', 'index')->name('datahotel.chart');
+    Route::get('/data/chart', 'index')->name('datahotel.charts');
 });
+
+// Route::get('/data/chart', function () {
+//     return view('datahotel.charts', [
+//     "chart" => Chart::all()
+//     ]);
+// })->name('datahotel.guest')->middleware('auth');
+
 
 
 
