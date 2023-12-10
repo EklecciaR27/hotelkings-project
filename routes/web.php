@@ -4,6 +4,7 @@ use App\Models\Guest;
 use App\Models\Reservasi;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\ImportController;
 use App\Http\Controllers\ReservasiController;
@@ -101,7 +102,10 @@ Route::controller(GuestController::class)->group(function(){
     Route::get('/data/guest/create', 'create')->name('datahotel.guest.create');
     Route::post('/data/guest/create/action','store')->name('datahotel.guest.store');
     Route::post('/data/guest/delete/{id}/action', 'delete')->name('datahotel.guest.delete');
+});
 
+Route::controller(ChartController::class)->group(function(){
+    Route::get('/data/chart', 'index')->name('datahotel.chart');
 });
 
 

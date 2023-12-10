@@ -129,6 +129,4 @@ class ReservasiController extends Controller
         exit;
     }
 
-
-
 }

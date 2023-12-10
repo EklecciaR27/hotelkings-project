@@ -1,8 +1,8 @@
 @extends('layouts.global')
-{{-- @section('js')
+@section('js')
     <script src="{{ $chart->cdn() }}"></script>
     {{ $chart->script() }}
-@endsection --}}
+@endsection
 @include('components.navbardashboard')
 
 
@@ -31,10 +31,18 @@
             </div>
         </div>
     </div>
-{{--
+
     <div style="display: flex; justify-content: space-around;">
         {!! $chart->container() !!}
-    </div> --}}
+        {{-- <div style="width: 45%;">
+            <h2>Total Reservasi : {{ count($reservasi) }}</h2>
+            <canvas id="reservasiChart" width="200" height="200"></canvas>
+        </div>
+        <div style="width: 45%;">
+            <h2>Total Tamu : {{ count($guest) }}</h2>
+            <canvas id="tamuChart" width="200" height="200"></canvas>
+        </div> --}}
+    </div>
 </section>
 
 
