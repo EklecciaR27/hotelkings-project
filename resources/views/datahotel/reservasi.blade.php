@@ -81,7 +81,7 @@
                                         Nomor Telepon
                                     </th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Jumlah Kamar
+                                        No. Kamar
                                     </th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         ID-Guest
@@ -93,7 +93,7 @@
                                         Bukti Pembayaran
                                     </th> --}}
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Aksi
+                                        ACTION
                                     </th>
                                 </tr>
                             </thead>

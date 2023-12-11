@@ -13,10 +13,9 @@
 <body>
     <div class="text-center flex flex-col items-center">
         <h1 class="text-2xl font-bold mt-8">CHART TOTAL TAMU DAN TOTAL RESERVASI</h1>
-
+        <div class=" w-full p-3"></div>
     <div style="">
         <canvas id="myChart" width="400" height="400"></canvas>
-
         <script>
             var totalReservasi = @json($totalReservasi);
             var totalTamu = @json($totalTamu);
@@ -25,7 +24,7 @@
             var myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['Data 1', 'Data 2', 'Data 3', 'Data 4', 'Data 5', 'Data6'],
+                    labels: ['Data 1', 'Data 2', 'Data 3', 'Data 4', 'Data 5', 'Data 6'],
                     datasets: [{
                             label: 'Total Reservasi',
                             data: totalReservasi,

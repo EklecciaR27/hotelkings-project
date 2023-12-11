@@ -12,6 +12,19 @@ class GuestController extends Controller
 
         ]);
     }
+
+    public function search(Request $request)
+    {
+    $query = $request->input('query');
+
+    $guest = Guest::where('nama', 'like', '%' . $query . '%')
+        ->orWhere('NIK', 'like', '%' . $query . '%')
+        ->get();
+
+    return view('datahotel.guest', compact('guest'));
+    }
+
+
     public function store(Request $request){
         // Validate Input
         $validateData = $request->validate([

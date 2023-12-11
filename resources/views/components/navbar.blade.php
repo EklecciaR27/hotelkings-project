@@ -6,15 +6,15 @@
     <span class="flex flex-row text-lg font-bold text-white">KING Hotel Nusa Dua, Bali </span>
 </div>
 <nav class="flex flex-row p-4 px-4 justify-between items-center bg-gray-900 z-4 sticky top-20 z-10">
-    <ul class="hidden lg:flex items-center gap-12 justify-center basis-1/2 text-white ml-60">
-        <li><a href="{{ route('user.home') }}">Home</a></li>
-        <li><a href="{{ route('user.resort') }}">The Resort</a></li>
-        <li><a href="{{ route('user.theroom') }}">The Room & Suites</a></li>
-        <li><a href="{{ route('user.dining') }}">Dining</a></li>
-        <li><a href="#">Our Hotel</a></li>
+    <ul class="hidden lg:flex items-center gap-12 justify-center basis-1/2 text-white font-bold ml-60">
+        <li class="hover:text-gray-300"><a href="{{ route('user.home') }}">Home</a></li>
+        <li class="hover:text-gray-300"><a href="{{ route('user.resort') }}">The Resort</a></li>
+        <li class="hover:text-gray-300"><a href="{{ route('user.theroom') }}">The Room & Suites</a></li>
+        <li class="hover:text-gray-300"><a href="{{ route('user.dining') }}">Dining</a></li>
+        <li class="hover:text-gray-300"><a href="{{ route('logout') }}"> LOGOUT </a></li>
         {{-- <li><a href="{{ url('data/reservasi') }}">Database</a></li> --}}
     </ul>
-    <div class="hidden lg:flex justify-end mr-52 p-4">
+    <div class="hidden lg:flex justify-end mr-52 p-4 items-center">
         <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 10 550 502"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
         <p class="username text-white">{{ Auth::user()->username }}</p>
     </div>

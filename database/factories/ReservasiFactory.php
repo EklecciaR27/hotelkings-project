@@ -32,7 +32,6 @@ class ReservasiFactory extends Factory
             'jumlahkamar' => fake()->numberBetween(1, 1000),
             'guest_id' => Guest::all()->random()->id,
             'gambarktp' => fake()->randomElement($gambarktp),
-            'gambarktp' => fake()->randomElement($filebukti),
         ];
     }
 }
