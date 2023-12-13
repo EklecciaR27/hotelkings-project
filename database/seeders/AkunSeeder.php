@@ -27,6 +27,13 @@ class AkunSeeder extends Seeder
                 'admin' => '1',
                 'password' => '123123',
             ],
+            [
+                'id' => '3',
+                'name' => 'user',
+                'username' => 'user',
+                'admin' => '0',
+                'password' => '123123',
+            ],
 
         ];
 
